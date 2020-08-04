@@ -34,6 +34,12 @@ export default class CreateOrdersProducts1596541230509
             type: 'integer',
           },
           {
+            name: 'price',
+            type: 'decimal',
+            precision: 10,
+            scale: 2,
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
