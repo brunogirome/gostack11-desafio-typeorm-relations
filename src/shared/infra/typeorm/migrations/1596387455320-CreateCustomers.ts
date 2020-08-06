@@ -20,6 +20,10 @@ export default class CreateCustomers1596387455320
             isUnique: true,
           },
           {
+            name: 'name',
+            type: 'varchar',
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',

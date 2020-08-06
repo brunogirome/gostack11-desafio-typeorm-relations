@@ -10,7 +10,7 @@ export default class CustomersController {
 
     const { name, email } = request.body;
 
-    const customer = createCustomer.execute({ name, email });
+    const customer = await createCustomer.execute({ name, email });
 
     return response.json(customer);
   }
