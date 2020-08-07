@@ -39,7 +39,14 @@ class ProductsRepository implements IProductsRepository {
   }
 
   public async findAllById(products: IFindProducts[]): Promise<Product[]> {
-    const findProducts = await this.ormRepository.findByIds(products);
+    // Alternative implementation:
+    // const findProducts = await this.ormRepository.findByIds(products);
+
+    const findProducts = await this.ormRepository.find({
+      where: {
+        id: In(products.map(product => product.id)),
+      },
+    });
 
     return findProducts;
   }
